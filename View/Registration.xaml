@@ -1,0 +1,49 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="LocalDatabase.Registration"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="Registration" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="60" />
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="53,34,0,0" Text="Marka" VerticalAlignment="Top" Width="86" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="53,106,0,0" Text="Model" VerticalAlignment="Top" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="53,176,0,0" Text="Rok produkcji" VerticalAlignment="Top" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="53,245,0,0" Text="Liczba drzwi" VerticalAlignment="Top" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="53,318,0,0" Text="Spalanie" VerticalAlignment="Top" />
+            <TextBox Height="66" HorizontalAlignment="Left" Margin="165,16,0,0" Text="{Binding CBrand, Mode=TwoWay}" VerticalAlignment="Top" Width="254" />
+            <TextBox Height="66" HorizontalAlignment="Left" Margin="165,88,0,0" Text="{Binding CModel, Mode=TwoWay}" VerticalAlignment="Top" Width="254" />
+            <TextBox Height="66" HorizontalAlignment="Left" Margin="213,160,0,0" Text="{Binding CYear, Mode=TwoWay}" VerticalAlignment="Top" Width="206" />
+            <TextBox Height="66" HorizontalAlignment="Left" Margin="213,232,0,0" Text="{Binding CDoorsCount, Mode=TwoWay}" VerticalAlignment="Top" Width="206" />
+            <TextBox HorizontalAlignment="Left" Margin="165,304,0,253" Text="{Binding CFuelUsage, Mode=TwoWay}" Width="254" Height="66" />
+            <Button Content="Add" Height="72" HorizontalAlignment="Left" Margin="251,517,0,0" VerticalAlignment="Top" Width="160" Command="{Binding AddCarCommand}"/>
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="51,388,0,0"  Text="Typ" VerticalAlignment="Top" />
+            <TextBox Height="66" HorizontalAlignment="Left" Margin="179,376,0,0" Text="{Binding CType, Mode=TwoWay}" VerticalAlignment="Top" Width="240" />
+            <TextBox Height="66" HorizontalAlignment="Left" Margin="166,445,0,0"  Text="{Binding CEngineCapacity, Mode=TwoWay}" VerticalAlignment="Top" Width="253" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="57,459,0,0" Text="Silnik" VerticalAlignment="Top" />
+        </Grid>
+        <TextBlock Grid.Row="1" Height="30" HorizontalAlignment="Left" Margin="629,2,0,0" Text="TextBlock" VerticalAlignment="Top" />
+    </Grid>
+</phone:PhoneApplicationPage>
