@@ -233,9 +233,16 @@ namespace LocalDatabase.ViewModel
 				}
 				else
 				{
-					context.Cars.DeleteAllOnSubmit(CarList);
-					context.SubmitChanges();
-					MessageBox.Show(LocalDatabase.Resources.Resources.CarsDeleted.ToString());
+					try
+					{
+						context.Cars.DeleteAllOnSubmit(CarList);
+						context.SubmitChanges();
+						MessageBox.Show(LocalDatabase.Resources.Resources.CarsDeleted.ToString());
+					}
+					catch(Exception ex)
+					{
+						MessageBox.Show(ex.Message.ToString());
+					}
 				}
 			}
 		}
@@ -295,9 +302,16 @@ namespace LocalDatabase.ViewModel
 					}
 					else
 					{
-						context.Cars.DeleteAllOnSubmit(ToDel);
-						context.SubmitChanges();
-						MessageBox.Show(LocalDatabase.Resources.Resources.CarsDeleted.ToString());
+						try
+						{
+							context.Cars.DeleteAllOnSubmit(ToDel);
+							context.SubmitChanges();
+							MessageBox.Show(LocalDatabase.Resources.Resources.CarsDeleted.ToString());
+						}
+						catch(Exception ex)
+						{
+							MessageBox.Show(ex.Message.ToString());
+						}
 					}
 				}
 			}
@@ -315,9 +329,17 @@ namespace LocalDatabase.ViewModel
 				using (var context = new CarDataContext(strConnection))
 				{
 					var car = new Car(carBrand, carModel, carYear, doorsCount, carFuelUsage, carType, carEngineCapacity);
-					context.Cars.InsertOnSubmit(car);
-					context.SubmitChanges();
-					MessageBox.Show(LocalDatabase.Resources.Resources.CarsDeleted.ToString());
+
+					try
+					{
+						context.Cars.InsertOnSubmit(car);
+						context.SubmitChanges();
+						MessageBox.Show(LocalDatabase.Resources.Resources.CarsDeleted.ToString());
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show(ex.Message.ToString());
+					}
 				}
 			}  
 		}
